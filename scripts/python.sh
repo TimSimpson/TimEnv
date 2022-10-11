@@ -22,6 +22,7 @@ if [[ $(tim_env_has_installed '# Python') == "" ]]; then
 
     pip install --user pipx
     "${HOME}/.local/bin/pipx" install poetry
+    "${HOME}/.local/bin/pipx" install cget
     "${HOME}/.local/bin/pipx" install clearscreen 
 
     # shellcheck disable=SC2016

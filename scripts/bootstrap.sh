@@ -23,5 +23,7 @@ Installing dependencies. If something fails, try erasing key lines in
 "${this_script_dir}/javascript.sh"
 "${this_script_dir}/lua.sh"
 "${this_script_dir}/golang.sh"
+"${this_script_dir}/cpp.sh"
+"${this_script_dir}/java.sh"
 
 echo 'ok'
