@@ -12,13 +12,21 @@ if [[ $(tim_env_has_installed 'TimEnv has installed packages') == "" ]]; then
     # This file contains common packages and build dependencies for other software,
     # such as Python and Lua.
 
+    # Adds the Microsoft package signing key to the list of trusted keys and 
+    # add the package repository
+    wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+    sudo dpkg -i packages-microsoft-prod.deb
+    rm packages-microsoft-prod.deb
+
     sudo apt update
     DEBIAN_FRONTEND=noninteractive sudo -E apt -y --no-install-recommends install \
+        aspnetcore-runtime-6.0 \
         build-essential \
         clang \
         cmake \
         cowsay \
         curl \
+        dotnet-sdk-6.0 \
         fortune \
         htop \
         jq \
