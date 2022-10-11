@@ -18,7 +18,11 @@ if [[ $(tim_env_has_installed '# Lua') == "" ]]; then
     ./configure && make && sudo make install
    
     # shellcheck disable=SC2016
-    echo '# Lua was installed
+    echo '
+###############################################################################
+# Lua
+###############################################################################
+
 ' >> "${TIMENV_STARTUP}"
 else
     echo 'Lua is already installed.'

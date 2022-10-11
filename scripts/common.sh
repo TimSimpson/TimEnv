@@ -21,10 +21,12 @@
             chmod +x "${TIMENV_STARTUP}"
             echo '#!/usr/bin/env bash
 
-    # This file helps set up tools installed via TimEnv. More info at:
-    # https://github.com/TimSimpson/TimEnv
+# This file helps set up tools installed via TimEnv. More info at:
+# https://github.com/TimSimpson/TimEnv
 
-            ' >> "${TIMENV_STARTUP}"
+export TIMENV_TOOLS='"'${TIMENV_TOOLS}'"'
+
+' >> "${TIMENV_STARTUP}"
         fi
 
         set +e

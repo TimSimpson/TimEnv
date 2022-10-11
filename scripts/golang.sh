@@ -20,9 +20,14 @@ if [[ $(tim_env_has_installed '# Go Lang') == "" ]]; then
     export PATH="${TIMENV_TOOLS}/go/1.19.1/go/bin:${PATH}"
     
     # shellcheck disable=SC2016
-    echo '# Go Lang
+    echo '
+###############################################################################
+# Go Lang
+###############################################################################
+
 export PATH="${TIMENV_TOOLS}/go/1.19.1/go/bin:${PATH}"    
-    ' >> "${TIMENV_STARTUP}"
+
+' >> "${TIMENV_STARTUP}"
 else 
     echo 'Go is already installed.'
 fi

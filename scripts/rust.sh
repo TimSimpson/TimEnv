@@ -17,8 +17,13 @@ if [[ $(tim_env_has_installed '# Rust') == "" ]]; then
     ./sh.rustup.rs -y
 
     # shellcheck disable=SC2016
-    echo '# Rust
+    echo '
+###############################################################################
+# Rust
+###############################################################################
+
 source "${HOME}/.cargo/env"
+
 ' >> "${TIMENV_STARTUP}"
 
     # shellcheck source=/dev/null

@@ -19,6 +19,9 @@ Installing dependencies. If something fails, try erasing key lines in
 
 "${this_script_dir}/packages.sh"
 "${this_script_dir}/rust.sh"
+"${this_script_dir}/python.sh"
+"${this_script_dir}/javascript.sh"
+"${this_script_dir}/lua.sh"
 "${this_script_dir}/golang.sh"
 
 echo 'ok'
