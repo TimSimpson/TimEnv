@@ -10,9 +10,7 @@ source "${this_script_dir}/common.sh"
 
 ensure_tools_dir_exists
 
-cat "${this_script_dir}/splash.txt"
-echo '
-Installing dependencies. If something fails, try erasing key lines in 
+echo 'Installing dependencies. If something fails, try erasing header lines in 
 '"${TIMENV_STARTUP}"' and try again.
 
 ' 
