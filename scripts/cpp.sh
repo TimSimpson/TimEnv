@@ -7,6 +7,9 @@ set -o nounset
 this_script_dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 # shellcheck source=/dev/null
 source "${this_script_dir}/common.sh"
+
+# Source the startup script as otherwise we won't find Python
+# shellcheck source=/dev/null
 source "${TIMENV_STARTUP}"
 
 if [[ $(tim_env_has_installed '# C++') == "" ]]; then    
