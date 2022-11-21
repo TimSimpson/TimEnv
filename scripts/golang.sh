@@ -30,7 +30,7 @@ if [[ $(tim_env_has_installed '# Go Lang') == "" ]]; then
 ###############################################################################
 
 export PATH="${TIMENV_TOOLS}/go/1.19.1/go/bin:${PATH}"
-export PATH="'"$(go env GOPATH)"'/bin:${PATH}
+export PATH="'"$(go env GOPATH)"'/bin:${PATH}"
 
 ' >> "${TIMENV_STARTUP}"
 else 
