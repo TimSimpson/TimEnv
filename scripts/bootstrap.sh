@@ -23,5 +23,6 @@ echo 'Installing dependencies. If something fails, try erasing header lines in
 "${this_script_dir}/golang.sh"
 "${this_script_dir}/cpp.sh"
 "${this_script_dir}/java.sh"
+"${this_script_dir}/misc.sh"
 
 echo 'ok'
