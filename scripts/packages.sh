@@ -56,6 +56,7 @@ if [[ $(tim_env_has_installed 'TimEnv has installed packages') == "" ]]; then
         shellcheck \
         tldr \
         tk-dev \
+        tmux \
         tzdata \
         unzip \
         vim \
