@@ -7,6 +7,7 @@ set -o nounset
 this_script_dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 # shellcheck source=/dev/null
 source "${this_script_dir}/common.sh"
+source "${TIMENV_STARTUP}"
 
 if [[ $(tim_env_has_installed '# C++') == "" ]]; then    
     git clone https://github.com/TimSimpson/cenv.git "${TIMENV_TOOLS}/cenv"
