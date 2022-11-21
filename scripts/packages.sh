@@ -58,6 +58,7 @@ if [[ $(tim_env_has_installed 'TimEnv has installed packages') == "" ]]; then
         tk-dev \
         tzdata \
         unzip \
+        vim \
         wget \
         xz-utils \
         zlib1g-dev \
