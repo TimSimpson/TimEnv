@@ -35,6 +35,7 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 export PIPX_DEFAULT_PYTHON="${HOME}/.pyenv/versions/3.9.14/bin/python"
+export PATH="${HOME}/.local/bin:${PATH}"
     ' >> "${TIMENV_STARTUP}"
 else
     echo 'Python is already installed.'
