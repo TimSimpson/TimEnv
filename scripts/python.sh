@@ -26,7 +26,10 @@ if [[ $(tim_env_has_installed '# Python') == "" ]]; then
     "${HOME}/.local/bin/pipx" install clearscreen 
 
     # shellcheck disable=SC2016
-    echo '# Python
+    echo '###############################################################################
+# Python
+###############################################################################
+
 export PYENV_ROOT="${HOME}/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
