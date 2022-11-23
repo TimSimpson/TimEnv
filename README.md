@@ -6,7 +6,15 @@ Apt packages are used when recommended. In other cases software is downloaded to
 
 ## Instructions
 
-Run 
+If your user doesn't have access to `sudo`, or you've already run this as another user, set 
+
+```bash
+export TIMENV_SKIP_SUDO=yes
+```
+
+first.
+
+Then, run 
 
 ```bash
 export TIMENV="${HOME}/Tools"  # Set here automatically, change it if you wish
