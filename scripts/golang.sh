@@ -15,7 +15,7 @@ if [[ $(tim_env_has_installed '# Go Lang') == "" ]]; then
 
     rm -rf /usr/local/go
     mkdir -p "${TIMENV_TOOLS}/go/1.19.1"
-    sudo tar -C "${TIMENV_TOOLS}/go/1.19.1" -xzf go1.19.1.linux-amd64.tar.gz
+    tar -C "${TIMENV_TOOLS}/go/1.19.1" -xzf go1.19.1.linux-amd64.tar.gz
 
     export PATH="${TIMENV_TOOLS}/go/1.19.1/go/bin:${PATH}"
     
@@ -30,7 +30,7 @@ if [[ $(tim_env_has_installed '# Go Lang') == "" ]]; then
 ###############################################################################
 
 export PATH="${TIMENV_TOOLS}/go/1.19.1/go/bin:${PATH}"
-export PATH="'"$(go env GOPATH)"'/bin:${PATH}
+export PATH="'"$(go env GOPATH)"'/bin:${PATH}"
 
 ' >> "${TIMENV_STARTUP}"
 else 

@@ -8,24 +8,19 @@ this_script_dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && p
 # shellcheck source=/dev/null
 source "${this_script_dir}/common.sh"
 
-# Source the startup script as otherwise we won't find Python
-# shellcheck source=/dev/null
-source "${TIMENV_STARTUP}"
-
-if [[ $(tim_env_has_installed '# C++') == "" ]]; then    
-    git clone https://github.com/TimSimpson/cenv.git "${TIMENV_TOOLS}/cenv"
-    pushd "${TIMENV_TOOLS}/cenv"
-    ./install.sh
-
+if [[ $(tim_env_has_installed '# Misc') == "" ]]; then    
+    mkdir -p "${TIMENV_TOOLS}/misc"
+    cp "${this_script_dir}/q.sh" "${TIMENV_TOOLS}/misc/q.sh"
+    
     # shellcheck disable=SC2016
     echo '  
 ###############################################################################
-# C++
+# Misc
 ###############################################################################
 
-source "${TIMENV_TOOLS}/cenv/resources/bash-support.sh"
+alias q="${TIMENV_TOOLS}/misc/q.sh"
 
 ' >> "${TIMENV_STARTUP}"
 else
-    echo 'C++ is already installed.'
+    echo 'Misc tools are already installed.'
 fi
