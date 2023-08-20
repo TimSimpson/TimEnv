@@ -14,7 +14,7 @@ if [[ $(tim_env_has_installed '# Javascript') == "" ]]; then
     export NVM_DIR="${HOME}/.nvm"
     # shellcheck source=/dev/null
     [ -s "${NVM_DIR}/nvm.sh" ] && \. "${NVM_DIR}/nvm.sh"
-    nvm install v18.9.1
+    nvm install v18.17.1
 
     # shellcheck disable=SC2016
     echo '

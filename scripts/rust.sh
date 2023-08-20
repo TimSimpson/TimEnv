@@ -30,11 +30,6 @@ source "${HOME}/.cargo/env"
     source "${HOME}/.cargo/env"
     
     rustup default stable
-
-    # Install some classic tools
-    cargo install bat
-    cargo install just
-    cargo install taplo-cli
 else
     echo 'Rust is already installed.'
 fi

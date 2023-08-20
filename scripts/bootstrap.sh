@@ -15,7 +15,7 @@ echo 'Installing dependencies. If something fails, try erasing header lines in
 
 ' 
 
-if [[ "${TIMENV_SKIP_SUDO}" == "" ]]; then
+if [[ "${TIMENV_SKIP_SUDO:-}" == "" ]]; then
     "${this_script_dir}/packages.sh"
 else
     echo 'Skipping sudo related setup steps'
@@ -23,7 +23,7 @@ fi
 "${this_script_dir}/rust.sh"
 "${this_script_dir}/python.sh"
 "${this_script_dir}/javascript.sh"
-if [[ "${TIMENV_SKIP_SUDO}" == "" ]]; then
+if [[ "${TIMENV_SKIP_SUDO:-}" == "" ]]; then
     "${this_script_dir}/lua.sh"
 else
     echo 'Skipping sudo related setup steps for Lua'

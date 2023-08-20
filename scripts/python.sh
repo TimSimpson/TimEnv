@@ -8,6 +8,7 @@ this_script_dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && p
 # shellcheck source=/dev/null
 source "${this_script_dir}/common.sh"
 
+py_version='3.11.4'
 
 if [[ $(tim_env_has_installed '# Python') == "" ]]; then    
     # Installs PyEnv, which helps manage Python versions.
@@ -17,8 +18,8 @@ if [[ $(tim_env_has_installed '# Python') == "" ]]; then
     command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
 
-    pyenv install 3.9.14
-    pyenv global 3.9.14
+    pyenv install "${py_version}"
+    pyenv global "${py_version}"
 
     pip install --user pipx
     "${HOME}/.local/bin/pipx" install poetry
