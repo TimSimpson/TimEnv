@@ -23,15 +23,15 @@ if [[ $(tim_env_has_installed '# Java ☕') == "" ]]; then
 
     export JAVA_HOME="${TIMENV_TOOLS}/java/jdk-19"
 
-    wget https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz
-    checksum=$(shasum -a 256 apache-maven-3.8.6-bin.tar.gz | cut -d' ' -f1)    
-    if [[ "${checksum}" != 'c7047a48deb626abf26f71ab3643d296db9b1e67f1faa7d988637deac876b5a9' ]] ; then
+    wget https://dlcdn.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.tar.gz
+    checksum=$(shasum -a 512 apache-maven-3.9.4-bin.tar.gz | cut -d' ' -f1)    
+    if [[ "${checksum}" != 'deaa39e16b2cf20f8cd7d232a1306344f04020e1f0fb28d35492606f647a60fe729cc40d3cba33e093a17aed41bd161fe1240556d0f1b80e773abd408686217e' ]] ; then
         echo 'Checksum of Maven download file failed!'
         exit 1
     fi
 
     mkdir -p "${TIMENV_TOOLS}/maven"
-    tar -xvf apache-maven-3.8.6-bin.tar.gz  --directory "${TIMENV_TOOLS}/maven"
+    tar -xvf apache-maven-3.9.4-bin.tar.gz  --directory "${TIMENV_TOOLS}/maven"
 
     # shellcheck disable=SC2016
     echo '    
@@ -40,7 +40,7 @@ if [[ $(tim_env_has_installed '# Java ☕') == "" ]]; then
 ###############################################################################
 export JAVA_HOME="${TIMENV_TOOLS}/java/jdk-19"
 export PATH="${JAVA_HOME}/bin:${PATH}"    
-export MAVEN_ROOT="${TIMENV_TOOLS}/Tools/maven/apache-maven-3.8.6"
+export MAVEN_ROOT="${TIMENV_TOOLS}/maven/apache-maven-3.9.4"
 export PATH="${MAVEN_ROOT}/bin:$PATH"
 
 ' >> "${TIMENV_STARTUP}"
