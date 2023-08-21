@@ -12,22 +12,20 @@ version='1.14.0'
 url="https://github.com/casey/just/releases/download/${version}/just-${version}-x86_64-unknown-linux-musl.tar.gz"
 
 if [[ $(tim_env_has_installed '# Just') == "" ]]; then
-    wget 
+    pushd /tmp
+    mkdir -p "${version}"
+    pushd "${version}"
+    wget "${url}"
 
-    https://github.com/casey/just/releases/download/1.14.0/just-1.14.0-x86_64-unknown-linux-musl.tar.gz
-
-    git clone https://github.com/TimSimpson/newp.git "${TIMENV_TOOLS}/newp"
-    pushd "${TIMENV_TOOLS}/newp"
-    cargo install --path .
-    popd
+    tar -xvf "just-${version}-x86_64-unknown-linux-musl.tar.gz"
+   
+    cp just "${TIMENV_TOOLS}/misc/"
 
     # shellcheck disable=SC2016
     echo '
-###############################################################################
-# Newp
-###############################################################################
+# Just
 
 ' >> "${TIMENV_STARTUP}"
 else
-    echo 'Newp is already installed.'
+    echo 'Just is already installed.'
 fi

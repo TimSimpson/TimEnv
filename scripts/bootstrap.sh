@@ -31,6 +31,5 @@ fi
 "${this_script_dir}/golang.sh"
 "${this_script_dir}/cpp.sh"
 "${this_script_dir}/java.sh"
-"${this_script_dir}/misc.sh"
 
 echo 'ok'

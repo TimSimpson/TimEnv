@@ -7,8 +7,8 @@
     export TIMENV_STARTUP="${TIMENV_TOOLS}/startup.sh"
 
     function ensure_tools_dir_exists() {
-        if [[ ! -d "${TIMENV_TOOLS}" ]]; then
-            mkdir -p "${TIMENV_TOOLS}"
+        if [[ ! -d "${TIMENV_TOOLS}/misc" ]]; then
+            mkdir -p "${TIMENV_TOOLS}/misc"
         fi
     }
 
@@ -26,6 +26,7 @@
 
 export TIMENV_TOOLS='"'${TIMENV_TOOLS}'"'
 
+export PATH="${PATH}:${TIMENV_TOOLS}/misc"
 ' >> "${TIMENV_STARTUP}"
         fi
 
