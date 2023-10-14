@@ -11,6 +11,10 @@
             mkdir -p "${TIMENV_TOOLS}/misc"
         fi
     }
+    
+    function startup_reminder() {
+        echo 'Add the following to '"${TIMENV_STARTUP}"' or your bashrc file:'    
+    }
 
     # Pass unique text here. If it appears in the startup script, something will be
     # returned
