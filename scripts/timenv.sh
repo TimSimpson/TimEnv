@@ -17,6 +17,7 @@ Usage:
 
 Tools:
     cpp
+    dotnet
     golang
     javascript
     java
@@ -40,6 +41,7 @@ command="${1}"
 shift
 case "${command}" in
     "cpp" ) "${script_dir}/cpp.sh" "${@}" ;;
+    "dotnet" ) "${script_dir}/dotnet.sh" "${@}" ;;
     "golang.sh" ) "${script_dir}/golang.sh" "${@}" ;;
      "golang.sh" ) "${script_dir}/golang.sh" "${@}" ;;
     
