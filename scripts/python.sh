@@ -24,6 +24,7 @@ pip install --user pipx
 "${HOME}/.local/bin/pipx" install poetry
 "${HOME}/.local/bin/pipx" install cget
 "${HOME}/.local/bin/pipx" install clearscreen 
+"${HOME}/.local/bin/pipx" install --include-deps ansible
 
 startup_script=/dev/null
 
@@ -42,7 +43,7 @@ export PYENV_ROOT="${HOME}/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-export PIPX_DEFAULT_PYTHON="${HOME}/.pyenv/versions/3.9.14/bin/python"
+export PIPX_DEFAULT_PYTHON="${HOME}/.pyenv/versions/'"${py_version}"'/bin/python"
 export PATH="${HOME}/.local/bin:${PATH}"
     ' | sudo tee -a "${startup_script}"
 fi
