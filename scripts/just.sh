@@ -8,7 +8,7 @@ this_script_dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && p
 # shellcheck source=/dev/null
 source "${this_script_dir}/common.sh"
 
-version='1.14.0'
+version='1.23.0'
 url="https://github.com/casey/just/releases/download/${version}/just-${version}-x86_64-unknown-linux-musl.tar.gz"
 
 if [[ $(tim_env_has_installed '# Just') == "" ]]; then
